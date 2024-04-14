@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  margin: 20px;
+}
+
+.style {
+  background-color: aqua;
+  color: red;
+  font-size: 60px;
+  transition: all .9s linear;
+}
+
+.active {
+  background-color: aqua;
+  color: white;
+}

@@ -1,0 +1,160 @@
+html 
+
+<body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <p>{{ date }}</p>
+    <p>{{ counter }}</p>
+    <div id="buttons">
+      <span><button @click="counter++">{{ button }}</button></span>
+      <span v-if="counter >= 2">
+        <button v-on:click="counter--">{{ button }}</button>
+      </span>
+    </div>
+
+    <button @click="updateTitle()">update the title</button>
+
+
+    <input v-model="input">
+    <div>{{ input }}</div>
+    <button @click="countFrom0To10()">count {{i}}</button>
+
+    <!-- events -->
+    <div @mouseover="handleEvent" class="box"></div>
+    <div class="box" @mouseenter="handleEvent"></div>
+    <div class="box" @mouseout="handleEvent"></div>
+    <div class="box" @mouseleave="handleEvent"></div>
+    <div class="box" @dblclick="handleEvent"></div>
+    <div class="box" @mousemove="move">{{ x }} - {{ y }}</div>
+
+    <!-- for -->
+    <div v-for="user in users" class="users">
+      <h4>{{ user.name }}</h4>
+      <p>{{ user.age }}</p>
+      <p> {{ user.email }}</p>
+      <p>{{ user.status }}</p>
+    </div>
+
+
+    <!-- attribute bidding-->
+    <a :href="AccountUrl">Account Link</a>
+    <div   class="books">
+      <p>{{ filteredBox }}</p>
+      <div v-for="box in filteredBox" :key="box.id" :class="{ red: box.isRed }" @click="toggleisRed(box)" class="box">{{ box.name }} {{ this is id box.id}}</div>
+    </div>
+  </div>
+
+  <script src="app.js"></scrip>
+
+css 
+
+.box {
+  background-color: red;
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+}
+
+.red {
+  background-color: aqua;
+}
+
+
+js vue app instatnce  
+
+const app = Vue.createApp({
+  data() {
+    return {
+      boxes: [
+        { isRed: true, name: "first box",id: 1 },
+        { isRed: false, name: "nd box", id: 2},
+        { isRed: true, name: "rd box" ,id: 3},
+        { isRed: true, name: "frd box" ,id: 4},
+        { isRed: false, name: "last box" ,id: 5},
+      ],
+      title: "Hello Vue",
+      date: new Date(),
+      button: "login",
+      counter: 0,
+      input: "",
+      i: 0,
+      x: 0,
+      y: 0,
+      AccountUrl: "https://www.google.com",
+      users: [
+        {
+          name: "Marwan",
+          lastName: "baz",
+          age: 20,
+          email: "Marwan@gmail.com",
+          status: undefined,
+          phoneNumber: 770108359,
+          userUrl: "https://www.dev.com",
+        },
+        {
+          name: "Ali",
+          age: 16,
+          email: "ali123453@gmail.com",
+          phoneNumber: null,
+        },
+      ],
+    };
+  },
+  methods: {
+    toggleisRed(box) {
+      box.isRed = !box.isRed;
+    },
+
+    updateTitle() {
+      this.title = this.input;
+    },
+    countFrom0To10() {
+      for (i = 0; i <= 10; i++) {
+        console.log(i); 
+      }
+    },
+    handleEvent(e) {
+      console.log(e.type);
+    },
+    move(e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
+    },
+  },
+  // a way to define a data property inside our components that depends on other data that we have inside that components || it is values that depends  on other value
+  computed: {
+    filteredBox() {
+      console.log(this.boxes);
+      return this.boxes.filter((box) => box.isRed);
+    },
+  },
+});
+
+app.mount("#app");
+
+const user = [
+  {
+    name: "Marwan",
+    lastName: "baz",
+    age: 20,
+    email: "Marwan@gmail.com",
+    status: undefined,
+    phoneNumber: 770108359,
+  },
+  {
+    name: "Ali",
+    age: 16,
+    email: "ali123453@gmail.com",
+    phoneNumber: null,
+  },
+];
+// console.log(this)
+// user.forEach((usr) => {
+//   usr.name = 'new for';
+
+// }, console.log(user))
+
+user.map((us) => {
+  us.name = "new map";
+  console.log(us.name);
+});

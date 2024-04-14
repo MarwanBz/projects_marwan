@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sequencer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+i,
+svg {
+  /* !for clear the buttons for event listeners so when we click on the icons we click the button not the icons */
+  pointer-events: none;
+  font-size: 30px;
+}
+
+.kick-pad,
+.snare-pad,
+.hihat-pad {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+}
+
+.kick-pad {
+  background-image: linear-gradient(rgb(107, 107, 253), lightblue);
+}
+
+.snare-pad {
+  background-image: linear-gradient(rgb(253, 238, 107), rgb(255, 255, 186));
+}
+
+.hihat-pad {
+  background-image: linear-gradient(rgb(253, 107, 180), rgb(255, 211, 238));
+}
+
+.kick-pad.active {
+  background-image: linear-gradient(rgb(21, 21, 255), rgb(72, 189, 228));
+}
+
+.snare-pad.active {
+  background-image: linear-gradient(rgb(247, 222, 0), rgb(252, 252, 108));
+}
+
+.hihat-pad.active {
+  background-image: linear-gradient(rgb(245, 33, 139), rgb(252, 159, 216));
+}
+
+.hihat-track,
+.snare-track,
+.kick-track {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.kick,
+.snare,
+.hihat {
+  display: flex;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0rem 2rem;
+}
+
+.controls button {
+  padding: .5rem;
+  margin: 0 5px 0 20px;
+  border-radius: 3px;
+  border: none;
+  background-color: crimson;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.pad {
+  transition: all 0.4s ease-in-out;
+}
+
+.play {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: cadetblue;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  margin: 3rem 0 0 0;
+}
+
+select {
+  padding: .6rem;
+  font-size: 20px;
+}
+
+.mute.active {
+  background-color: rgb(99, 25, 25);
+}
+
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+
+.tempo-slider {
+  padding: 10px;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background-color: coral;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.tempo p {
+  font-size: 1.5rem;
+  margin: 2rem;
+  text-align: center;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}

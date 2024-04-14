@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>شبكة تواصل نت - تسجيل الدخول</title>
+</head>
+
+</head>
+
+<body>
+	$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+		<!--
+		function doLogin() {
+			document.sendin.username.value = document.login.username.value;
+			document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+			document.sendin.submit();
+			return false;
+		}
+		//
+		-->
+	</script>
+	$(endif)
+
+	<div id="wrap">
+		<div id="content">
+			<div class="main-heading">
+				<h1 class="welcome">مرحبا بك قم بتسجيل الدخول</h1>
+			</div>
+			<!--<div class="ramadan"><a href="./ramadan.html"><img src="./images/rama.png" alt=""></a></div>
+			<h2>أظغط على الصورة</h2>!-->
+			<div class="sidebare">
+				<div class="login">
+					<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+						$(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+						<input id="user" type="text" name="username" value="$(username)" placeholder="رمز الدخول  : ">
+						<!-- <input id="pass" type="password" name="password" placeholder="كلمة المرور   : "> -->
+						<input type="submit" id="loginBtn" value="تسجيل الدخول" />
+						<!-- <input type="submit" value="دخول" /> !-->
+					</form>
+				</div>
+
+				<!-- <input type="submit" value="دخول" /> !-->
+				</form>
+			</div>
+			$(if error)
+			<b id="errormsg" style="display:none">$(error)</b>
+			<div id="message">
+				<script type="text/javascript">
+					var verror = document.getElementById('errormsg');
+					switch (verror.innerHTML) {
+						case 'invalid password':
+							document.write('خطأ في كلمة المرور');
+							break;
+
+						case 'invalid Calling-Station-Id':
+							document.write('هذا الحساب منتهي الصلاحية');
+							break;
+
+						case 'download limit reached':
+							document.write('هذا الحساب منتهي الرصيد');
+							break;
+
+						case 'no valid profile found':
+							document.write('هذا الحساب منتهي الصلاحية');
+							break;
+
+						case 'simultaneous session limit reached':
+							document.write('الكرت مستخدم في جهاز آخر');
+							break;
+
+						default:
+							res = verror.innerHTML;
+							res = res.replace("user", "المستخدم");
+							res = res.replace("not found", "   منتهي الرصيد أو ان الكرت غير موجود ");
+							document.write(res);
+					}
+				</script>
+
+			</div>$(endif)
+		</div>
+
+		<div class="sidebare">
+			<div class="block" id="floated">
+				<div class="title">
+					<h2><img src="./images/money.png" alt="" srcset="">أسعار الكروت : </h2>
+				</div>
+				<div class="content">
+					<table>
+						<tr>
+							<td class="first">السعر</td>
+							<td class="first">الحجم</td>
+							<td class="first">المدة</td>
+						</tr>
+						<tr>
+							<td>100 ريال</td>
+							<td>200 ميقا</td>
+							<td>6 ساعات</td>
+						</tr>
+						<tr>
+							<td>200 ريال</td>
+							<td>500 ميقا</td>
+							<td>2 يوم </td>
+						</tr>
+						<tr>
+							<td>300 ريال</td>
+							<td>700 ميقا</td>
+							<td>3أيام</td>
+						</tr>
+						<tr>
+							<td>500 ريال</td>
+							<td>1000 ميقا</td>
+							<td>إسبوع</td>
+						</tr>
+						<tr>
+							<td>1600 ريال</td>
+							<td>3000 ميقا</td>
+							<td>20 يوم</td>
+						</tr>
+						<tr>
+							<td>2500 ريال</td>
+							<td>5000 ميقا</td>
+							<td>شهر</td>
+						</tr>
+						<tr>
+							<td>3500 ريال</td>
+							<td>10000 ميقا</td>
+							<td>شهر</td>
+						</tr>
+						<tr>
+							<td>4500 ريال</td>
+							<td>15000 ميقا</td>
+							<td>شهر</td>
+						</tr>
+						<tr>
+							<td>6500 ريال</td>
+							<td>25000 ميقا</td>
+							<td>شهر</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+		</div>
+		<div class="sidebare">
+			<div class="block hidden">
+				<div class="title">
+					<h2><img src="./images/building.png" alt="" srcset="">مواقع بيع الكروت : </h2>
+				</div>
+				<div class="content">
+					<ul>
+						<li>الشافعي : بقالة الخير - بقالة شمسان - الشيخ للبهارات - سوبر ماركت البريكي</li>
+						<li>ابن سيناء : اسواق النهدي - بقالة باحكيم - قباء لتسوق-تموينات الهناء-تموينات الريان</li>
+						<li>المطابع : -بقالة البركه - بقالةالعمودي - بقالة باجرفان - بقالة البندر</li>
+						<li>الخمر : بقالة المحمدي</li>
+						<li>غرير : بقالة الخيرات</li>
+						<li>العشوائي : بقالة العمودي - بقالة الدواعنه</li>
+						<li>الدواجن : باتيس للغاز</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+	<footer class="footer">
+		<p>جميع الحقوق محفوظة <span>لشبكة تواصل نت</span> &copy; </p>
+		<p>لأي إستفسار يرجى التواصل مع إدارة الشبكة
+
+			733024644 - 701276366 - 701231904
+		</p>
+
+		<p>
+			تصميم وبرمجة <span><a class="programmer" href="tel:+967702020128"> Baz </a> <a class="programmer"
+					href="tel:+967770108459">
+					Marwan</a></span>
+		</p>
+
+	</footer>
+	<script type="text/javascript">
+		<!--
+		document.login.username.focus();
+		//
+		-->
+	</script>
+</body>
+
+</html>

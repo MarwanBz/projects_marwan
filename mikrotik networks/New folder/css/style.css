@@ -1,0 +1,113 @@
+/*
+Theme Name: shbtalk_premium (Designed By Elsayed Fahmy)
+Theme URI: http://www.shbtalk.com
+Author: Shabab Talk team
+Author URI: http://www.shbtalk.com
+Description: Shabab Talk Premium Theme for WordPress
+Version: 1.0
+Tags: three-columns, right-sidebar, flexible-width, custom-menu, full-width-template, rtl-language-support, theme-options, translation-ready
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+*{ padding:0; margin:0;	outline:none; list-style:none; border: 0 none;}
+@font-face {
+	src: url('../GE_SS_Two_Medium.otf');
+	font-family: 'GE_SS_Two_Medium';
+}
+body{
+	background: url(../images/blue-bg.jpg) repeat center center;
+	background-attachment:fixed;
+	overflow-x: hidden;
+}
+
+/*
+================================================
+Styling Of The Main Wrapper && its Contents ... 
+================================================
+*/
+#main-wrap{
+	width:950px;
+	height: auto;
+	display: block;
+	clear: both;
+	margin: 0 auto 0;
+}
+.mainlogin-form{
+	background: url(../images/login_bg.png) no-repeat center center;
+	width: 944px;
+	height: 867px;
+	display: block;
+	clear: both;
+	margin: -80px auto 0;
+}
+.log-form{
+	width:450px;
+	height: 350px;
+	margin: 30px 0 0 185px;
+}
+.social-icons{
+	background: url(../images/social-icons.png) no-repeat center center;
+	width: 448px;
+	height: 92px;
+	display: block;
+	clear: both;
+	margin: -180px auto 0;
+}
+.login-head{
+	background: url(../images/login_head.png) no-repeat top center;
+	width:270px;
+	height: 61px;
+	display: inline-block;
+	margin: 50px 0 0 310px;
+}
+.loginbtn{
+	background: url(../images/login_btn.png) no-repeat center center;
+	width:180px;
+	height: 67px;
+	margin:10px 0 0 130px;
+	cursor:pointer;
+}
+.userinput:hover , .passinput:hover , .loginbtn:hover{
+	opacity: 0.7;
+}
+.network-name{
+	font-family: 'GE_SS_Two_Medium',arial,Georgia, serif;
+	color:#FFF;
+	text-shadow: #fff4f4 0 0 15px;
+	font-size:25px;
+	font-weight: 700;
+	text-align: center;
+	padding: 140px 0 0 130px;
+}
+.login_success{
+	font-family: 'GE_SS_Two_Medium',arial,Georgia, serif;
+	color:#FFF;
+	text-shadow: #FFF 0 0 20px;
+	font-size:25px;
+	font-weight: 700;
+	text-align: center;
+	padding: 20px 25px 0 0;
+	line-height: 1.9;
+}
+.success-ico{
+	background: url(../images/login-success.png) no-repeat top center;
+	width:256px;
+	height: 256px;
+	margin: 30px 0 0 320px;
+}
+.designer a{
+	font-family: Arial, Helvetica, sans-serif,Georgia, serif;
+	color:#cb0909;
+	text-shadow: #fff4f4 0 0 15px;
+	font-size:17px;
+	font-weight: 700;
+	text-align: center;
+}
+.designer{
+	font-family: Arial, Helvetica, sans-serif,Georgia, serif;
+	color:#333;
+	text-shadow: #fff4f4 0 0 15px;
+	font-size:17px;
+	font-weight: 700;
+	text-align: center;
+}

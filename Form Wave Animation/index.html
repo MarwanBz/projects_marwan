@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Wave Animation with validation</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Please Register</h1>
+    <form>
+      <div class="form-control">
+        <input type="text" required id="email">
+        <label>Email</label>
+        <small>Error msg</small>
+      </div>
+
+      <div class="form-control">
+        <input type="text"  id="username">
+        <label>Username</label>
+        <small>Error msg</small>
+      </div>
+
+      <div class="form-control">
+        <input type="password"  id="password">
+        <label>Password</label>
+        <small>Error msg</small>
+      </div>
+
+      <div class="form-control">
+        <input type="password"  id="password2">
+        <label>confirm password</label>
+        <small>Error msg</small>
+      </div>
+
+      <button class="btn">Login</button>
+
+      <p class="text">have an account? <a href="#">Login</a></p>
+    </form>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

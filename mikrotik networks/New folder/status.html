@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+	      <!-- <meta HTTP-EQUIV='REFRESH' content='20; url=http://www.google.com/' /> -->
+	  <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" type="text/css" href="style.css">
+	$(if refresh-timeout)
+	    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+  	<title>شبكة تواصل نت - بيانات حسابك</title>
+
+	  <script language="JavaScript">
+<!--//
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+        //-->
+</script>
+  </head>
+  </head>
+
+
+  <body $(if advert-pending=='yes' ) onLoad="openAdvert()" $(endif)>
+	<div id="wrap">
+		<div id="s-content">
+			<div id="userDetails">
+				<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+					<table>
+						<h1 id="status" class="main-heading"> انظر الى تفاصيل حسابك في الأسفل  <span class="arrow">$(username)</span> </h1>
+						<script>
+							const user = document.querySelector('h1#status span.arrow');
+							hideUsername();
+
+							function hideUsername() {
+								// userTest= 'marwanmarwa';
+								userTest = user.innerText;
+								hiddenUser = "";
+								for (index = 0; index < userTest.length; index++) {
+									if (index > 3) {
+										hiddenUser += "*";
+									} else {
+										hiddenUser += userTest[index];
+									}
+								}
+								user.innerText = hiddenUser;
+							}
+						// </script>
+						<!--<div class="ramadan"><a href="./ramadan.html"><img src="./images/rama.png" alt=""></a></div>
+						<h2>أظغط على الصورة</h2>!-->
+						<tr>
+							<td class="balance"><span class="arrow">&#8595;</span>الرصيد
+								المتبقي</td>
+						</tr>
+						<tr>
+							<td class="bytes-out">
+								<script>
+										document.write(($(limit-bytes-out) / 1048576).toFixed(2) + 'MB')
+								</script>
+								<script>
+										document.write(($(remain-bytes-total)/1048576).toFixed(2)+ 'MB')
+								</script>
+							</td>
+						</tr>
+						<tr>
+							<td class="timeout"><span class="arrow">&#8595;</span>
+								صالح لغاية</td>
+						</tr>
+						<tr>
+							<td class="time-left">$(session-time-left)</td>
+							<script type="text/javascript">
+								document.querySelector(".time-left").innerHTML = "$(session-time-left)".replace("w", " أسبوع , ").replace("d", " يوم , ").replace("h", " ساعة , ").replace("m", " دقيقة , ").replace("s", " ثانية");
+							</script>
+						</tr>
+
+					</table>
+
+					<input id="logout" type="submit" value="لتسجيل الخروج" />
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+	<footer class="footer">
+		<p>جميع الحقوق محفوظة <span>لشبكة تواصل نت</span> &copy; </p>
+		<p>لأي إستفسار يرجى التواصل مع إدارة الشبكة
+
+			733024644 - 701276366 - 701231904
+		</p>
+
+		<p>
+			تصميم وبرمجة <span><a class="programmer" href="tel:+967770108459"> Baz </a> <a class="programmer" href="tel:+967702020128">
+					Marwan</a></span>
+		</p>
+
+	</footer>
+
+  </body>
+</html>

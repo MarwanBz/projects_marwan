@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" >
+  <script src="https://unpkg.com/vue@3.0.2"></script>
+  <title>Vue App</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>{{ header || "welcome"}} </h1>
+      <div class="todo-container">
+        <div  class="buttons">
+          <button  @click="handleAdd" id="add-task">Add Task</button>
+          <button  @click="clearTasks" id="clear-task">Clear Tasks</button>
+          <button id="cancel-task" @click="cancelTask">Cancel</button>
+        </div>
+        <div>
+          <input  @keyup.enter="handleAdd" v-model="newItem" type="text"
+            placeholder="Add Tasks">
+          <ul class="todos-container">
+            <!-- with destructuring object -->
+            <!-- <li v-for="{id , task} in todos" :key="id">{{id }}:  {{task}}</li> -->
+
+            <p v-if="todos.length === 0">Nice You Completed All of Your Tasks For Today!</p>
+            <!-- list rendering -->
+            <li v-for="item in todos" :key="item.id">{{item.task}}</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script >
+    import ref from 'vue';
+    const header = ref("hello composition api")
+
+  </script>
+</body>
+
+</html>

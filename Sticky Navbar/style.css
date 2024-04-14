@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  background-image:url(/code.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+nav {
+  padding: 10px 0;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 20px;
+}
+
+nav .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+nav .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .container ul li{
+  list-style: none;
+}
+nav .container li a {
+    text-decoration: none;
+    padding: 10px 5px;
+    color: black;
+}
+
